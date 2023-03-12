@@ -153,3 +153,34 @@ img {
     transform: rotate(45deg);
     color: var(--text-color);
 }
+
+/* This is from 670px to 1440px */
+
+@media (min-width: 670px) {
+
+    img {
+        width: auto;
+    }
+
+    .container {
+        margin: 0 5rem;
+        padding: 6rem 0;
+    }
+
+    .main-title {
+        padding-bottom: 1rem;
+        font-size: 2.5rem;
+    }
+
+    .accordion__tab {
+        padding: .3rem 0;
+    }
+
+    .accordion__title {
+        font-size: 1.8rem;
+    }
+
+    .accordion__icon  {
+        font-size: 2.6rem;
+    }
+}
