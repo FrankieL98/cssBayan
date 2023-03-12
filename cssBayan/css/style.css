@@ -39,3 +39,117 @@
         url('../fonts/MontserratSemiBold.woff2') format('woff2'),
         url('../fonts/MontserratSemiBold.woff') format('woff');
 }
+
+:root {
+    --background-color: #f5edd8;
+    --text-color: #222;
+    --title3-color: #2d26eb;
+    --border-color: #a5a5a5;
+}
+
+* {
+    position: static;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    max-width: 100vw;
+    background-color: var(--background-color);
+}
+
+/* This is from 0 to 670px */
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.container {
+    max-width: 100vw;
+    margin: 0 1rem;
+    padding: 1rem 0;
+}
+
+.main-title {
+    margin: 0;
+    padding-bottom: .4rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.accordion__list {
+    width: 100%;
+}
+
+.accordion__item {
+    width: 100%;
+    padding: .2rem 0;
+    text-align: center;
+    background-color: inherit;
+    border-top: .1rem solid var(--border-color);
+    list-style: none;
+}
+
+.accordion__item:last-child {
+    padding-bottom: 0;
+}
+
+.accordion__tab {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+    padding: .1rem 0;
+    color: var(--title3-color);
+}
+
+.accordion__tab-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.accordion__title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 2;
+    color: var(--title3-color);
+    transition: color .3s ease;
+}
+
+.accordion__icon {
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--title3-color);
+    transition: transform .3s ease, color .3s ease;
+}
+
+.accordion__content {
+    display: block;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .7s ease-in-out;
+}
+
+.accordion__input[type="radio"] {
+    display: none;
+}
+
+.accordion__input[type="radio"]:checked + .accordion__content {
+    max-height: 100vh;
+    animation-name: swashIn;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+}
+
+.accordion__input[type="radio"]:checked ~ .accordion__tab-top .accordion__title {
+    color: var(--text-color);
+}
+
+.accordion__input[type="radio"]:checked ~ .accordion__tab-top .accordion__icon {
+    transform: rotate(45deg);
+    color: var(--text-color);
+}
