@@ -3,16 +3,6 @@
 @font-face {
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 300;
-    font-display: swap;
-    src: local('Montserrat Light'), local('Montserrat-Light'),
-        url('../fonts/Montserrat-Light.woff2') format('woff2'),
-        url('../fonts/Montserrat-Light.woff') format('woff');
-}
-
-@font-face {
-    font-family: 'Montserrat';
-    font-style: normal;
     font-weight: 400;
     font-display: swap;
     src: local('Montserrat Regular'), local('Montserrat-Regular'),
@@ -122,7 +112,7 @@ img {
 
 .accordion__icon {
     font-size: 1.3rem;
-    font-weight: 300;
+    font-weight: 500;
     color: var(--title3-color);
     transition: transform .3s ease, color .3s ease;
 }
@@ -182,6 +172,84 @@ img {
 
     .accordion__icon  {
         font-size: 2.6rem;
+    }
+}
+
+/* This if from 1440 to ... */
+
+@media (min-width: 1440px) {
+
+    img {
+        width: auto;
+    }
+
+    .container {
+        margin: 0 19rem;
+        padding: 2.5rem 0;
+    }
+
+    .main-title {
+        padding-bottom: 1.5rem;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+
+    .accordion__list {
+        cursor: pointer;
+    }
+
+    .accordion__item {
+        padding: 0;
+    }
+
+    .accordion__tab {
+        padding: 1.4rem 0;
+        cursor: pointer;
+        transition: color .3s ease, filter .3s ease;
+    }
+
+    .accordion__tab-top {
+        cursor: pointer;
+    }
+
+    .accordion__title {
+        font-size: 1.8rem;
+        font-weight: 600;
+    }
+
+    .accordion__icon {
+        display: none;
+        font-size: 3rem;
+        transition: transform .3s ease, display .3s ease, color .3s ease;
+    }
+
+    .accordion__list:hover .accordion__title,
+    .accordion__list:hover .accordion__icon {
+        color: var(--text-color);
+    }
+
+    .accordion__list:hover .accordion__icon  {
+        display: block;
+    }
+
+    .accordion__item:hover .accordion__content {
+        max-height: 100vh;
+        animation-name: swashIn;
+        animation-duration: .7s;
+        animation-timing-function: ease;
+    }
+
+    .accordion__item:hover .accordion__icon {
+        transform: rotate(45deg);
+    }
+
+    .accordion__tab:active {
+        filter: opacity(0.8);
+    }
+
+    .accordion__tab:active .accordion__title,
+    .accordion__tab:active .accordion__icon {
+        color: var(--title3-color)!important;
     }
 }
 
